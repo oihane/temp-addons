@@ -1,0 +1,116 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_package_label
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-17 13:09+0000\n"
+"PO-Revision-Date: 2017-02-17 13:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_package_label
+#: view:res.partner:product_package_label.res_partner_report_form_view
+msgid "Contacts Report"
+msgstr "Informes de contactos"
+
+#. module: product_package_label
+#: field:product.label.report.copy,test_order:0
+msgid "For Test Orders"
+msgstr "Para pedidos de prueba"
+
+#. module: product_package_label
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+msgid "For test order"
+msgstr "Para pedidos de prueba"
+
+#. module: product_package_label
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: product_package_label
+#: model:ir.model,name:product_package_label.model_product_supplierinfo
+msgid "Information about a product supplier"
+msgstr "Información de un proveedor de producto"
+
+#. module: product_package_label
+#: model:ir.model,name:product_package_label.model_product_ul
+msgid "Logistic Unit"
+msgstr "Unidad logística"
+
+#. module: product_package_label
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+msgid "Model"
+msgstr "Modelo"
+
+#. module: product_package_label
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+msgid "Not for test order"
+msgstr "Para pedidos no de prueba"
+
+#. module: product_package_label
+#: model:ir.model,name:product_package_label.model_res_partner
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+#: field:product.label.report.copy,partner_id:0
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: product_package_label
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_form_view
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_tree_view
+#: view:product.supplierinfo:product_package_label.product_supplierinfo_customer_form_inh_view
+#: view:product.supplierinfo:product_package_label.product_supplierinfo_extended_report_form_view
+#: view:product.ul:product_package_label.product_ul_extended_report_form_view
+#: view:res.partner:product_package_label.res_partner_report_form_view
+msgid "Product Label Report"
+msgstr "Informe etiqueta de producto"
+
+#. module: product_package_label
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+msgid "Product UL"
+msgstr "Unidad logística"
+
+#. module: product_package_label
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+#: view:product.supplierinfo:product_package_label.product_supplierinfo_customer_form_inh_view
+#: view:res.partner:product_package_label.res_partner_report_form_view
+#: field:res.partner,report_ids:0
+msgid "Report"
+msgstr "Informe"
+
+#. module: product_package_label
+#: model:ir.actions.act_window,name:product_package_label.report_copy_action
+#: model:ir.ui.menu,name:product_package_label.report_copy_mi
+msgid "Report Copy"
+msgstr "Copias de informes"
+
+#. module: product_package_label
+#: field:product.label.report.copy,report_model:0
+msgid "Report Model"
+msgstr "Modelo del informe"
+
+#. module: product_package_label
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+msgid "Supplierinfo"
+msgstr "Empresa / Producto"
+
+#. module: product_package_label
+#: code:addons/product_package_label/models/product.py:49
+#, python-format
+msgid "You must select at least one Supplierinfo or Product UL or Partner."
+msgstr "Debe seleccionar al menos un Cliente / Producto, una Unidad logística o una Empresa."
+
+#. module: product_package_label
+#: code:addons/product_package_label/models/product.py:45
+#, python-format
+msgid "You must select only one."
+msgstr "Solo puede seleccionar uno."
+

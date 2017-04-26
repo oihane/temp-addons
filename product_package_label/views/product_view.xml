@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="product_label_report_copy_tree_view">
+            <field name="name">product.label.report.copy.tree</field>
+            <field name="model">product.label.report.copy</field>
+            <field name="arch" type="xml">
+                <tree string="Product Label Report">
+                    <field name="partner_id" />
+                    <field name="supplierinfo_id" />
+                    <field name="product_ul_id" />
+                    <field name="report_id" required="1" />
+                    <field name="report_model" invisible="1" />
+                    <field name="copy_num"/>
+                    <field name="label_model"
+                           attrs="{'required':[('report_model','in',['stock.picking','stock.picking.wave'])]}" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_label_report_copy_form_view">
+            <field name="name">product.label.report.copy.form</field>
+            <field name="model">product.label.report.copy</field>
+            <field name="arch" type="xml">
+                <form string="Product Label Report">
+                    <group>
+                        <group>
+                            <field name="partner_id" />
+                            <field name="supplierinfo_id" />
+                            <field name="product_ul_id" />
+                        </group>
+                        <group>
+                            <field name="report_id" required="1" />
+                            <field name="report_model" />
+                            <field name="copy_num" />
+                            <field name="label_model"
+                                   attrs="{'required':[('report_model','in',['stock.picking','stock.picking.wave'])]}" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_label_report_copy_search_view">
+            <field name="name">product.label.report.copy.search</field>
+            <field name="model">product.label.report.copy</field>
+            <field name="arch" type="xml">
+                <search string="Product Label Report">
+                    <field name="partner_id" />
+                    <field name="supplierinfo_id" />
+                    <field name="product_ul_id" />
+                    <field name="report_id" />
+                    <field name="report_model" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Partner" domain="[('partner_id','!=',False)]"
+                                context="{'group_by':'partner_id'}" />
+                        <filter string="Supplierinfo" domain="[('supplierinfo_id','!=',False)]"
+                                context="{'group_by':'supplierinfo_id'}" />
+                        <filter string="Product UL" domain="[('product_ul_id','!=',False)]"
+                                context="{'group_by':'product_ul_id'}" />
+                        <separator />
+                        <filter string="Report" domain="[]"
+                                context="{'group_by': 'report_id'}" />
+                        <filter string="Model" domain="[]"
+                                context="{'group_by': 'report_model'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="report_copy_action">
+            <field name="name">Report Copy</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.label.report.copy</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="product_label_report_copy_search_view"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="report_copy_action_form_view">
+            <field name="act_window_id" ref="report_copy_action" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="product_label_report_copy_form_view"/>
+            <field name="sequence" eval="2"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="report_copy_action_tree_view">
+            <field name="act_window_id" ref="report_copy_action"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="product_label_report_copy_tree_view"/>
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <menuitem id="report_copy_mi" action="report_copy_action"
+                  parent="base.menu_base_config" sequence="100" />
+
+        <record model="ir.ui.view" id="product_supplierinfo_extended_report_form_view">
+            <field name="name">product.supplierinfo.extended.report.form</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_form_view" />
+            <field name="arch" type="xml">
+                <field name="pricelist_ids" position="after">
+                    <field name="report_ids" nolabel="1" colspan="4">
+                        <tree string="Product Label Report" editable="bottom">
+                            <field name="report_id" required="1" />
+                            <field name="report_model" invisible="1" />
+                            <field name="copy_num"/>
+                            <field name="label_model"
+                                   attrs="{'required':[('report_model','in',['stock.picking','stock.picking.wave'])]}" />
+                        </tree>
+                    </field>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_ul_extended_report_form_view">
+            <field name="name">product.ul.extended.report.form</field>
+            <field name="model">product.ul</field>
+            <field name="inherit_id" ref="product_packaging_views.product_ul_packaging_form_view" />
+            <field name="arch" type="xml">
+                <field name="packagings" position="after">
+                    <field name="report_ids" nolabel="1" colspan="4" context="{'label_model': 'palet'}">
+                        <tree string="Product Label Report" editable="bottom">
+                            <field name="report_id" required="1" />
+                            <field name="report_model" invisible="1" />
+                            <field name="copy_num"/>
+                            <field name="label_model"
+                                   attrs="{'required':[('report_model','in',['stock.picking','stock.picking.wave'])]}" />
+                        </tree>
+                    </field>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

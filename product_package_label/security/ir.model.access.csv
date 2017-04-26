@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_label_report_copy_user,product.label.report.copy user,model_product_label_report_copy,base.group_user,1,0,0,0
+access_product_label_report_copy_manager,product.label.report.copy manager line,model_product_label_report_copy,base.group_sale_manager,1,1,1,1

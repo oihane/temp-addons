@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="res_partner_report_form_view">
+            <field name="name">res.partner.report.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <page name="sales_purchases" position="inside">
+                    <separator string="Report" colspan="2"/>
+                    <field name="report_ids" nolabel="1" colspan="2">
+                        <tree string="Product Label Report" editable="bottom">
+                            <field name="report_id" required="1" />
+                            <field name="report_model" invisible="1" />
+                            <field name="copy_num"/>
+                            <field name="label_model"
+                                   attrs="{'required':[('report_model','in',['stock.picking','stock.picking.wave'])]}" />
+                        </tree>
+                    </field>
+                    <div attrs="{'invisible': [('childs_report_ids','=',[])]}">
+                        <separator string="Contacts Report" colspan="2" />
+                        <field name="childs_report_ids" nolabel="1" colspan="2">
+                            <tree string="Contacts Report">
+                                <field name="partner_id" />
+                                <field name="report_id" />
+                                <field name="copy_num" />
+                                <field name="label_model" />
+                            </tree>
+                            <form string="Contacts Report">
+                                <group>
+                                    <group>
+                                        <field name="partner_id" />
+                                        <field name="report_id" />
+                                        <field name="report_model" />
+                                    </group>
+                                    <group>
+                                        <field name="copy_num" />
+                                        <field name="label_model" />
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </div>
+                </page>
+            </field>
+        </record>
+    </data>
+</openerp>
