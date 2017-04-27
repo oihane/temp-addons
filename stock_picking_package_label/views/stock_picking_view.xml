@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="stock_picking_package_label_print_form">
+            <field name="name">stock.picking.package.label.print.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="priority" eval="20" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Labels to print">
+                        <button name="button_load_printing_info" type="object"
+                                string="Load printing info" class="oe_highlight"
+                                help="This will reload all tables, erasing everything on them." />
+                        <button name="button_print_all" type="object"
+                                string="Print all" attrs="{'invisible':[('pack_operation_ids','=',[])]}"
+                                help="This will print all the reports checked to print with action 'Send to printer'." />
+                        <button name="button_print_all_reports" type="object"
+                                string="Print all reports" attrs="{'invisible':[('pack_operation_ids','=',[])]}"
+                                help="This will print all the reports from picking reports checked to print with action 'Send to printer'." />
+                        <button name="button_print_all_cube" type="object"
+                                string="Print all by cube" attrs="{'invisible':[('pack_operation_ids','=',[])]}"
+                                help="This will print all the reports from by cubes table checked to print with action 'Send to printer'." />
+                        <button name="button_print_all_nonumber_pallet" type="object"
+                                string="Print all by logistic unit" attrs="{'invisible':[('pack_operation_ids','=',[])]}"
+                                help="This will print all the reports from by logistic unit table checked to print with action 'Send to printer'." />
+                        <button name="button_print_all_number_pallet" type="object"
+                                string="Print all by pallet numbers" attrs="{'invisible':[('pack_operation_ids','=',[])]}"
+                                help="This will print all the reports from by pallet numbers table checked to print with action 'Send to printer'." />
+                        <group string="Picking Reports" attrs="{'invisible':[('pack_operation_ids','=',[])]}">
+                            <field name="report_print" nolabel="1" colspan="4" />
+                        </group>
+                        <group string="By Cubes" attrs="{'invisible':[('pack_operation_ids','=',[])]}">
+                            <field name="cube_label_prints" nolabel="1" colspan="4"/>
+                        </group>
+                        <group string="By Logistic Unit" attrs="{'invisible':[('pack_operation_ids','=',[])]}">
+                            <field name="nonumber_pallet_label_prints" nolabel="1" colspan="4"/>
+                        </group>
+                        <group string="By Pallet Numbers" attrs="{'invisible':[('pack_operation_ids','=',[])]}">
+                            <field name="number_pallet_label_prints" nolabel="1" colspan="4"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="picking_print_report_tree_view">
+            <field name="name">picking.print.report.tree</field>
+            <field name="model">picking.print.report</field>
+            <field name="arch" type="xml">
+                <tree string="Picking Report Print" editable="bottom">
+                    <field name="do_print" />
+                    <field name="report_id" domain="[('model','=','stock.picking')]" />
+                    <field name="action_print" readonly="1" />
+                    <field name="number_copy"/>
+                    <button name="print_reports" string="Print" type="object"
+                            icon="gtk-print"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="picking_print_label_cube_tree_view">
+            <field name="name">picking.print.label.cube.tree</field>
+            <field name="model">picking.print.label.cube</field>
+            <field name="arch" type="xml">
+                <tree string="By Cubes" editable="bottom">
+                    <field name="do_print" />
+                    <field name="product_id" />
+                    <field name="lot_id" />
+                    <field name="product_qty" />
+                    <field name="cubes_number"/>
+                    <field name="report_id" domain="[('model','=','stock.pack.operation')]" />
+                    <field name="action_print" readonly="1" />
+                    <field name="number_copy"/>
+                    <button name="print_reports" string="Print" type="object"
+                            icon="gtk-print"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="picking_print_label_pack_number_tree_view">
+            <field name="name">picking.print.label.pack.number.tree</field>
+            <field name="model">picking.print.label.pack.number</field>
+            <field name="arch" type="xml">
+                <tree string="By Pallet Numbers" editable="bottom">
+                    <field name="do_print" />
+                    <field name="package_id" />
+                    <field name="product_ul_id" />
+                    <field name="packages_number"/>
+                    <field name="report_id" domain="[('model','=','stock.picking')]" />
+                    <field name="action_print" readonly="1" />
+                    <field name="number_copy"/>
+                    <button name="print_reports" string="Print" type="object"
+                            icon="gtk-print"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="picking_print_label_pack_nonumber_tree_view">
+            <field name="name">picking.print.label.pack.nonumber.tree</field>
+            <field name="model">picking.print.label.pack.nonumber</field>
+            <field name="arch" type="xml">
+                <tree string="By Logistic Unit" editable="bottom">
+                    <field name="do_print" />
+                    <field name="product_ul_id" />
+                    <field name="packages_number"/>
+                    <field name="report_id" domain="[('model','=','stock.picking')]" />
+                    <field name="action_print" readonly="1" />
+                    <field name="number_copy"/>
+                    <button name="print_reports" string="Print" type="object"
+                            icon="gtk-print"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

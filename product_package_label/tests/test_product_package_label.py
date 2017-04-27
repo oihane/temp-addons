@@ -13,7 +13,7 @@ class TestProductPackageLabel(TransactionCase):
         self.report_copy_model = self.env['product.label.report.copy']
         partner_model = self.env['res.partner']
         ul_model = self.env['product.ul']
-        report_model = self.env['ir.actions.report.xml']
+        self.report_model = self.env['ir.actions.report.xml']
         self.parent = partner_model.create({
             'name': 'Parent Partner',
         })
@@ -25,7 +25,7 @@ class TestProductPackageLabel(TransactionCase):
             'name': 'Logistic Unit',
             'type': 'unit',
         })
-        self.report = report_model.create({
+        self.report = self.report_model.create({
             'name': 'Report',
             'model': 'stock.picking',
             'report_type': 'qweb-pdf',

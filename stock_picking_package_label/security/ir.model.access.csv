@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_picking_print_report_user,picking.print.report user,model_picking_print_report,base.group_user,1,1,1,1
+access_picking_print_label_cube_user,picking.print.label.cube user,model_picking_print_label_cube,base.group_user,1,1,1,1
+access_picking_print_label_nonumber_user,picking.print.label.pack.nonumber user,model_picking_print_label_pack_nonumber,base.group_user,1,1,1,1
+access_picking_print_label_pack_number_user,picking.print.label.pack.number user,model_picking_print_label_pack_number,base.group_user,1,1,1,1

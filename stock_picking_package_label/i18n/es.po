@@ -1,0 +1,273 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_picking_package_label
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-27 10:09+0000\n"
+"PO-Revision-Date: 2017-04-27 10:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,number_copy:0
+#: field:picking.print.label.pack.nonumber,number_copy:0
+#: field:picking.print.label.pack.number,number_copy:0
+#: field:picking.print.report,number_copy:0
+msgid "# Copies"
+msgstr "Nº de copias"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,cubes_number:0
+msgid "# Cubes"
+msgstr "Nº de cubos"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.pack.nonumber,packages_number:0
+#: field:picking.print.label.pack.number,packages_number:0
+msgid "# Pallets"
+msgstr "Nº de palés"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,action_print:0
+#: field:picking.print.label.pack.nonumber,action_print:0
+#: field:picking.print.label.pack.number,action_print:0
+#: field:picking.print.report,action_print:0
+msgid "Action"
+msgstr "Acción"
+
+#. module: stock_picking_package_label
+#: view:picking.print.label.cube:stock_picking_package_label.picking_print_label_cube_tree_view
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+#: field:stock.picking,cube_label_prints:0
+msgid "By Cubes"
+msgstr "Por cubos"
+
+#. module: stock_picking_package_label
+#: view:picking.print.label.pack.nonumber:stock_picking_package_label.picking_print_label_pack_nonumber_tree_view
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+#: field:stock.picking,nonumber_pallet_label_prints:0
+msgid "By Logistic Unit"
+msgstr "Por unidad logística"
+
+#. module: stock_picking_package_label
+#: view:picking.print.label.pack.number:stock_picking_package_label.picking_print_label_pack_number_tree_view
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+#: field:stock.picking,number_pallet_label_prints:0
+msgid "By Pallet Numbers"
+msgstr "Por número de palés"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,create_uid:0
+#: field:picking.print.label.pack.nonumber,create_uid:0
+#: field:picking.print.label.pack.number,create_uid:0
+#: field:picking.print.report,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,create_date:0
+#: field:picking.print.label.pack.nonumber,create_date:0
+#: field:picking.print.label.pack.number,create_date:0
+#: field:picking.print.report,create_date:0
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,display_name:0
+#: field:picking.print.label.pack.nonumber,display_name:0
+#: field:picking.print.label.pack.number,display_name:0
+#: field:picking.print.report,display_name:0
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,id:0
+#: field:picking.print.label.pack.nonumber,id:0
+#: field:picking.print.label.pack.number,id:0
+#: field:picking.print.report,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_picking_package_label
+#: help:picking.print.label.cube,do_print:0
+#: help:picking.print.label.pack.nonumber,do_print:0
+#: help:picking.print.label.pack.number,do_print:0
+#: help:picking.print.report,do_print:0
+msgid "If this check is marked, it will be printed."
+msgstr "Si está marcado, se imprimirá."
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "Labels to print"
+msgstr "Etiquetas a imprimir"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,__last_update:0
+#: field:picking.print.label.pack.nonumber,__last_update:0
+#: field:picking.print.label.pack.number,__last_update:0
+#: field:picking.print.report,__last_update:0
+msgid "Last Modified on"
+msgstr "Última actualización por"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,write_uid:0
+#: field:picking.print.label.pack.nonumber,write_uid:0
+#: field:picking.print.label.pack.number,write_uid:0
+#: field:picking.print.report,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,write_date:0
+#: field:picking.print.label.pack.nonumber,write_date:0
+#: field:picking.print.label.pack.number,write_date:0
+#: field:picking.print.report,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "Load printing info"
+msgstr "Cargar info. de impresión"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,lot_id:0
+msgid "Lot/Serial Number"
+msgstr "Lote/Nº de serie"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,operation_id:0
+msgid "Operation"
+msgstr "Operación"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.pack.number,package_id:0
+msgid "Package"
+msgstr "Paquete"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,picking_id:0
+#: field:picking.print.label.pack.nonumber,picking_id:0
+#: field:picking.print.label.pack.number,picking_id:0
+#: field:picking.print.report,picking_id:0
+msgid "Picking"
+msgstr "Albarán"
+
+#. module: stock_picking_package_label
+#: model:ir.model,name:stock_picking_package_label.model_stock_picking
+msgid "Picking List"
+msgstr "Albarán"
+
+#. module: stock_picking_package_label
+#: view:picking.print.report:stock_picking_package_label.picking_print_report_tree_view
+msgid "Picking Report Print"
+msgstr "Informes de albarán"
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "Picking Reports"
+msgstr "Informes de albarán"
+
+#. module: stock_picking_package_label
+#: view:picking.print.label.cube:stock_picking_package_label.picking_print_label_cube_tree_view
+#: field:picking.print.label.cube,do_print:0
+#: view:picking.print.label.pack.nonumber:stock_picking_package_label.picking_print_label_pack_nonumber_tree_view
+#: field:picking.print.label.pack.nonumber,do_print:0
+#: view:picking.print.label.pack.number:stock_picking_package_label.picking_print_label_pack_number_tree_view
+#: field:picking.print.label.pack.number,do_print:0
+#: view:picking.print.report:stock_picking_package_label.picking_print_report_tree_view
+#: field:picking.print.report,do_print:0
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "Print all"
+msgstr "Imprimir todo"
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "Print all by cube"
+msgstr "Imprimir por cubo"
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "Print all by logistic unit"
+msgstr "Imprimir por unidad logística"
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "Print all by pallet numbers"
+msgstr "Imprimir por número de palés"
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "Print all reports"
+msgstr "Imprimir los albaranes"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.pack.nonumber,product_ul_id:0
+#: field:picking.print.label.pack.number,product_ul_id:0
+msgid "Product Ul"
+msgstr "Unidad logística de producto"
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,product_qty:0
+msgid "Qty"
+msgstr "Ctd."
+
+#. module: stock_picking_package_label
+#: field:picking.print.label.cube,report_id:0
+#: field:picking.print.label.pack.nonumber,report_id:0
+#: field:picking.print.label.pack.number,report_id:0
+#: field:picking.print.report,report_id:0
+msgid "Report"
+msgstr "Informe"
+
+#. module: stock_picking_package_label
+#: field:stock.picking,report_print:0
+msgid "Reports"
+msgstr "Informes"
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "This will print all the reports checked to print with action 'Send to printer'."
+msgstr "Esto imprimirá todos los informes marcados para imprimir con la acción 'Mandar a impresora'."
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "This will print all the reports from by cubes table checked to print with action 'Send to printer'."
+msgstr "Esto imprimirá todos los informes por cubo marcados para imprimir con la acción 'Mandar a impresora'."
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "This will print all the reports from by logistic unit table checked to print with action 'Send to printer'."
+msgstr "Esto imprimirá todos los informes por unidad logística marcados para imprimir con la acción 'Mandar a impresora'."
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "This will print all the reports from by pallet numbers table checked to print with action 'Send to printer'."
+msgstr "Esto imprimirá todos los informes marcados por número de palés para imprimir con la acción 'Mandar a impresora'."
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "This will print all the reports from picking reports checked to print with action 'Send to printer'."
+msgstr "Esto imprimirá todos los informes de albarán marcados para imprimir con la acción 'Mandar a impresora'."
+
+#. module: stock_picking_package_label
+#: view:stock.picking:stock_picking_package_label.stock_picking_package_label_print_form
+msgid "This will reload all tables, erasing everything on them."
+msgstr "Esto recargará todas las tablas, eliminando todo lo que haya en ellas."
+
