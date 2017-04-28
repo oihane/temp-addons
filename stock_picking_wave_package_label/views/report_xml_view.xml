@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="base_report_to_printer.base_report_to_printer_tree_view">
+            <field name="name">report.xml.to.printer.tree</field>
+            <field name="model">ir.actions.report.xml</field>
+            <field name="inherit_id" ref="base.act_report_xml_view_tree" />
+            <field name="priority" eval="20" />
+            <field name="arch" type="xml">
+                <field name="attachment" position="after">
+                    <field name="property_printing_action" />
+                    <field name="printing_printer_id" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
