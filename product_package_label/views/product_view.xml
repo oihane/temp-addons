@@ -24,20 +24,22 @@
             <field name="model">product.label.report.copy</field>
             <field name="arch" type="xml">
                 <form string="Product Label Report">
-                    <group>
+                    <sheet>
                         <group>
-                            <field name="partner_id" />
-                            <field name="supplierinfo_id" />
-                            <field name="product_ul_id" />
+                            <group>
+                                <field name="partner_id" />
+                                <field name="supplierinfo_id" />
+                                <field name="product_ul_id" />
+                            </group>
+                            <group>
+                                <field name="report_id" required="1" />
+                                <field name="report_model" readonly="1"/>
+                                <field name="copy_num" />
+                                <field name="label_model"
+                                       attrs="{'required':[('report_model','in',['stock.picking','stock.picking.wave'])]}" />
+                            </group>
                         </group>
-                        <group>
-                            <field name="report_id" required="1" />
-                            <field name="report_model" />
-                            <field name="copy_num" />
-                            <field name="label_model"
-                                   attrs="{'required':[('report_model','in',['stock.picking','stock.picking.wave'])]}" />
-                        </group>
-                    </group>
+                    </sheet>
                 </form>
             </field>
         </record>
