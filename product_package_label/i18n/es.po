@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-17 13:09+0000\n"
-"PO-Revision-Date: 2017-02-17 13:09+0000\n"
+"POT-Creation-Date: 2017-04-27 10:07+0000\n"
+"PO-Revision-Date: 2017-04-27 10:07+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,19 +16,34 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_package_label
+#: field:product.label.report.copy,copy_num:0
+msgid "# Copies"
+msgstr "Nº de copias"
+
+#. module: product_package_label
 #: view:res.partner:product_package_label.res_partner_report_form_view
 msgid "Contacts Report"
 msgstr "Informes de contactos"
 
 #. module: product_package_label
-#: field:product.label.report.copy,test_order:0
-msgid "For Test Orders"
-msgstr "Para pedidos de prueba"
+#: field:product.label.report.copy,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
 
 #. module: product_package_label
-#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
-msgid "For test order"
-msgstr "Para pedidos de prueba"
+#: field:product.label.report.copy,create_date:0
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: product_package_label
+#: selection:product.label.report.copy,label_model:0
+msgid "Cube"
+msgstr "Cubo"
+
+#. module: product_package_label
+#: field:product.label.report.copy,display_name:0
+msgid "Display Name"
+msgstr "Nombre a mostrar"
 
 #. module: product_package_label
 #: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
@@ -36,9 +51,34 @@ msgid "Group By..."
 msgstr "Agrupar por..."
 
 #. module: product_package_label
+#: field:product.label.report.copy,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: product_package_label
 #: model:ir.model,name:product_package_label.model_product_supplierinfo
 msgid "Information about a product supplier"
 msgstr "Información de un proveedor de producto"
+
+#. module: product_package_label
+#: field:product.label.report.copy,label_model:0
+msgid "Label model"
+msgstr "Modelo etiqueta"
+
+#. module: product_package_label
+#: field:product.label.report.copy,__last_update:0
+msgid "Last Modified on"
+msgstr "Última actualización por"
+
+#. module: product_package_label
+#: field:product.label.report.copy,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: product_package_label
+#: field:product.label.report.copy,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización el"
 
 #. module: product_package_label
 #: model:ir.model,name:product_package_label.model_product_ul
@@ -51,9 +91,14 @@ msgid "Model"
 msgstr "Modelo"
 
 #. module: product_package_label
-#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
-msgid "Not for test order"
-msgstr "Para pedidos no de prueba"
+#: selection:product.label.report.copy,label_model:0
+msgid "No Numbered Pallet"
+msgstr "Palé no numerado"
+
+#. module: product_package_label
+#: selection:product.label.report.copy,label_model:0
+msgid "Numbered Pallet"
+msgstr "Palé numerado"
 
 #. module: product_package_label
 #: model:ir.model,name:product_package_label.model_res_partner
@@ -63,10 +108,14 @@ msgid "Partner"
 msgstr "Empresa"
 
 #. module: product_package_label
+#: selection:product.label.report.copy,label_model:0
+msgid "Picking"
+msgstr "Albarán"
+
+#. module: product_package_label
 #: view:product.label.report.copy:product_package_label.product_label_report_copy_form_view
 #: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
 #: view:product.label.report.copy:product_package_label.product_label_report_copy_tree_view
-#: view:product.supplierinfo:product_package_label.product_supplierinfo_customer_form_inh_view
 #: view:product.supplierinfo:product_package_label.product_supplierinfo_extended_report_form_view
 #: view:product.ul:product_package_label.product_ul_extended_report_form_view
 #: view:res.partner:product_package_label.res_partner_report_form_view
@@ -75,12 +124,15 @@ msgstr "Informe etiqueta de producto"
 
 #. module: product_package_label
 #: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+#: field:product.label.report.copy,product_ul_id:0
 msgid "Product UL"
 msgstr "Unidad logística"
 
 #. module: product_package_label
 #: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
-#: view:product.supplierinfo:product_package_label.product_supplierinfo_customer_form_inh_view
+#: field:product.label.report.copy,report_id:0
+#: field:product.supplierinfo,report_ids:0
+#: field:product.ul,report_ids:0
 #: view:res.partner:product_package_label.res_partner_report_form_view
 #: field:res.partner,report_ids:0
 msgid "Report"
@@ -98,18 +150,24 @@ msgid "Report Model"
 msgstr "Modelo del informe"
 
 #. module: product_package_label
-#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
-msgid "Supplierinfo"
-msgstr "Empresa / Producto"
+#: field:res.partner,childs_report_ids:0
+msgid "Reports"
+msgstr "Informes"
 
 #. module: product_package_label
-#: code:addons/product_package_label/models/product.py:49
+#: view:product.label.report.copy:product_package_label.product_label_report_copy_search_view
+#: field:product.label.report.copy,supplierinfo_id:0
+msgid "Supplierinfo"
+msgstr "Producto-Empresa"
+
+#. module: product_package_label
+#: code:addons/product_package_label/models/product.py:44
 #, python-format
 msgid "You must select at least one Supplierinfo or Product UL or Partner."
-msgstr "Debe seleccionar al menos un Cliente / Producto, una Unidad logística o una Empresa."
+msgstr "Debe seleccionar al menos un producto-empresa, una Unidad logística o una Empresa."
 
 #. module: product_package_label
-#: code:addons/product_package_label/models/product.py:45
+#: code:addons/product_package_label/models/product.py:40
 #, python-format
 msgid "You must select only one."
 msgstr "Solo puede seleccionar uno."
