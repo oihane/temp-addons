@@ -20,6 +20,7 @@
     "depends": [
         "base",
         "product_packaging_views",
+        "base_report_auto_create_qweb",
     ],
     "data": [
         "security/ir.model.access.csv",
