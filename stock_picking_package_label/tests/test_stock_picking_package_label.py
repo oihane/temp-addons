@@ -4,6 +4,7 @@
 
 from openerp.addons.product_package_label.tests import \
     test_product_package_label
+from lxml import etree
 
 
 class TestStockPickingPackageLabel(
@@ -39,25 +40,48 @@ class TestStockPickingPackageLabel(
             })],
         })
         self.stock_picking.action_confirm()
+        self.stock_picking.force_assign()
 
     def test_stock_picking_package_label(self):
+        self.assertFalse(self.stock_picking.report_print)
+        self.assertFalse(self.stock_picking.cube_label_prints)
+        self.assertFalse(self.stock_picking.number_pallet_label_prints)
+        self.assertFalse(self.stock_picking.nonumber_pallet_label_prints)
+        self.fix_report_view(self.report)
         self.report_copy_model.create({
             'partner_id': self.partner.id,
             'report_id': self.report.id,
             'copy_num': 1,
             'label_model': 'picking',
         })
+        self.fix_report_view(self.report2)
         self.report_copy_model.create({
             'partner_id': self.partner.id,
             'report_id': self.report2.id,
             'copy_num': 1,
             'label_model': 'cube',
         })
-        # self.stock_picking.button_load_printing_info()
-        # self.stock_picking.button_print_all()
+        self.stock_picking.button_load_printing_info()
+        self.assertTrue(self.stock_picking.report_print)
+        self.assertTrue(self.stock_picking.cube_label_prints)
+        # self.assertTrue(self.stock_picking.number_pallet_label_prints)
+        # self.assertTrue(self.stock_picking.nonumber_pallet_label_prints)
+        self.stock_picking.button_print_all()
 
     def test_childs_report(self):
         """ pass """
 
     def test_constraint(self):
         """ pass """
+
+    def fix_report_view(self, report):
+        report.button_create_qweb()
+        report_view = self.browse_ref(report.report_name)
+        arch = etree.XML(report_view.arch)
+        nodes = arch.xpath("//t[@t-name='{}']".format(report.report_name))
+        subelement = etree.Element('h1')
+        for node in nodes:
+            node.append(subelement)
+        report_view.write({
+            'arch': etree.tostring(arch),
+        })
