@@ -1,0 +1,217 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_picking_wave_package_label
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-02 13:15+0000\n"
+"PO-Revision-Date: 2017-05-02 13:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,number_copy:0
+#: field:picking.wave.print.label.pack.number,number_copy:0
+#: field:picking.wave.print.report,number_copy:0
+msgid "# Copies"
+msgstr "Nº de copias"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,packages_number:0
+#: field:picking.wave.print.label.pack.number,packages_number:0
+msgid "# Pallets"
+msgstr "Nº de palés"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,action_print:0
+#: field:picking.wave.print.label.pack.number,action_print:0
+#: field:picking.wave.print.report,action_print:0
+msgid "Action"
+msgstr "Action"
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+#: field:stock.picking.wave,nonumber_pallet_label_prints:0
+msgid "By Logistic Unit"
+msgstr "Por unidad logística"
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+#: field:stock.picking.wave,number_pallet_label_prints:0
+msgid "By Pallet Numbers"
+msgstr "Por número de palés"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,create_uid:0
+#: field:picking.wave.print.label.pack.number,create_uid:0
+#: field:picking.wave.print.report,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,create_date:0
+#: field:picking.wave.print.label.pack.number,create_date:0
+#: field:picking.wave.print.report,create_date:0
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,display_name:0
+#: field:picking.wave.print.label.pack.number,display_name:0
+#: field:picking.wave.print.report,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,id:0
+#: field:picking.wave.print.label.pack.number,id:0
+#: field:picking.wave.print.report,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_picking_wave_package_label
+#: help:picking.wave.print.label.pack.nonumber,do_print:0
+#: help:picking.wave.print.label.pack.number,do_print:0
+#: help:picking.wave.print.report,do_print:0
+msgid "If this check is marked, it will be printed."
+msgstr "Si está marcado, se imprimirá."
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "Labels to print"
+msgstr "Etiquetas a imprimir"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,__last_update:0
+#: field:picking.wave.print.label.pack.number,__last_update:0
+#: field:picking.wave.print.report,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,write_uid:0
+#: field:picking.wave.print.label.pack.number,write_uid:0
+#: field:picking.wave.print.report,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,write_date:0
+#: field:picking.wave.print.label.pack.number,write_date:0
+#: field:picking.wave.print.report,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "Load printing info"
+msgstr "Cargar info. de impresión"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.number,package_id:0
+msgid "Package"
+msgstr "Paquete"
+
+#. module: stock_picking_wave_package_label
+#: model:ir.model,name:stock_picking_wave_package_label.model_stock_picking_wave
+#: field:picking.wave.print.label.pack.nonumber,wave_id:0
+#: field:picking.wave.print.label.pack.number,wave_id:0
+#: field:picking.wave.print.report,wave_id:0
+msgid "Picking Wave"
+msgstr "Agrupación de albaranes"
+
+#. module: stock_picking_wave_package_label
+#: view:picking.wave.print.label.pack.nonumber:stock_picking_wave_package_label.picking_wave_print_label_pack_nonumber_tree_view
+#: view:picking.wave.print.label.pack.number:stock_picking_wave_package_label.picking_wave_print_label_pack_number_tree_view
+msgid "Picking Wave Print Label"
+msgstr "Impresion de etiquetas de agrupación de albaranes"
+
+#. module: stock_picking_wave_package_label
+#: view:picking.wave.print.report:stock_picking_wave_package_label.picking_wave_print_report_tree_view
+msgid "Picking Wave Report Print"
+msgstr "Informes de agrupaciones"
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "Picking Wave Reports"
+msgstr "Informes de agrupaciones"
+
+#. module: stock_picking_wave_package_label
+#: view:picking.wave.print.label.pack.nonumber:stock_picking_wave_package_label.picking_wave_print_label_pack_nonumber_tree_view
+#: field:picking.wave.print.label.pack.nonumber,do_print:0
+#: view:picking.wave.print.label.pack.number:stock_picking_wave_package_label.picking_wave_print_label_pack_number_tree_view
+#: field:picking.wave.print.label.pack.number,do_print:0
+#: view:picking.wave.print.report:stock_picking_wave_package_label.picking_wave_print_report_tree_view
+#: field:picking.wave.print.report,do_print:0
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "Print all"
+msgstr "Imprimir todo"
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "Print all by logistic unit"
+msgstr "Imprimir por unidad logística"
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "Print all by pallet numbers"
+msgstr "Imprimir por número de palés"
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "Print all reports"
+msgstr "Imprimir los informes"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,product_ul_id:0
+#: field:picking.wave.print.label.pack.number,product_ul_id:0
+msgid "Product Ul"
+msgstr "Unidad logística de producto"
+
+#. module: stock_picking_wave_package_label
+#: field:picking.wave.print.label.pack.nonumber,report_id:0
+#: field:picking.wave.print.label.pack.number,report_id:0
+#: field:picking.wave.print.report,report_id:0
+msgid "Report"
+msgstr "Informe"
+
+#. module: stock_picking_wave_package_label
+#: field:stock.picking.wave,report_print:0
+msgid "Reports"
+msgstr "Informes"
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "This will print all the reports checked to print with action 'Send to printer'."
+msgstr "Esto imprimirá todos los informes marcados para imprimir con la acción 'Mandar a impresora'."
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "This will print all the reports from by logistic unit table checked to print with action 'Send to printer'."
+msgstr "Esto imprimirá todos los informes por unidad logística marcados para imprimir con la acción 'Mandar a impresora'."
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "This will print all the reports from by pallet numbers table checked to print with action 'Send to printer'."
+msgstr "Esto imprimirá todos los informes marcados por número de palés para imprimir con la acción 'Mandar a impresora'."
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "This will print all the reports from picking wave reports checked to print with action 'Send to printer'."
+msgstr "Esto imprimirá todos los informes de agrupaciones marcados para imprimir con la acción 'Mandar a impresora'."
+
+#. module: stock_picking_wave_package_label
+#: view:stock.picking.wave:stock_picking_wave_package_label.stock_picking_wave_label_print_form
+msgid "This will reload all tables, erasing everything on them."
+msgstr "Esto recargará todas las tablas, eliminando todo lo que haya en ellas."
+
