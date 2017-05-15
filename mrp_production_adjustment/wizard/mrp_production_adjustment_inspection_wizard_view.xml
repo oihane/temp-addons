@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="mrp_production_adjustment_inspection_wizard_form_view"
+                model="ir.ui.view">
+            <field name="name">mrp.production.adjustment.inspection.wizard.form</field>
+            <field name="model">mrp.production.adjustment.inspection.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Set adjustment test">
+                    <group>
+                        <group>
+                            <field name="adjustment_id" invisible="1" />
+                            <field name="test_id" required="1" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="button_set_lab_test" type="object"
+                                string="Set test" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link"
+                                special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="set_adjustment_test_action" model="ir.actions.act_window">
+            <field name="name">Set adjustment test</field>
+            <field name="src_model">mrp.production.adjustment.line</field>
+            <field name="res_model">mrp.production.adjustment.inspection.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="mrp_production_adjustment_inspection_wizard_form_view" />
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

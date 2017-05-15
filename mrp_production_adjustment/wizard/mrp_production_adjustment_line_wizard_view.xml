@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="mrp_production_adjustment_line_wizard_form_view">
+            <field name="name">mrp.production.adjustment.line.wizard.form</field>
+            <field name="model">mrp.production.adjustment.line.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Adjustment">
+                    <group>
+                        <group colspan="4" string="Previous Measure">
+                            <field name="ph_before" />
+                            <field name="visco_before" />
+                            <field name="thixo_before" />
+                        </group>
+                        <group colspan="4">
+                            <separator string="Add Product" colspan="4" />
+                            <field name="product_id" />
+                            <label for="product_qty"/>
+                            <div>
+                                <field name="product_qty" class="oe_inline" />
+                                <field name="product_uom_id" class="oe_inline"
+                                       groups="product.group_uom" />
+                            </div>
+                            <field name="lot_id" />
+                        </group>
+                        <group colspan="4" string="After Addition Measure">
+                            <field name="ph_after" />
+                            <field name="visco_after" />
+                            <field name="thixo_after" />
+                        </group>
+                        <field name="final_addition"/>
+                    </group>
+                    <footer>
+                        <button name="make_adjustment" type="object"
+                                string="Confirm" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link"
+                                special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="make_adjustment_action" model="ir.actions.act_window">
+            <field name="name">Addition View</field>
+            <field name="src_model">mrp.production</field>
+            <field name="res_model">mrp.production.adjustment.line.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="mrp_production_adjustment_line_wizard_form_view" />
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

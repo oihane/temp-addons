@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record forcecreate="True" id="config_parameter_maximize"
+                model="ir.config_parameter">
+            <field name="key">web_dialog_size.default_maximize</field>
+            <field name="value" eval="True"/>
+        </record>
+    </data>
+</openerp>

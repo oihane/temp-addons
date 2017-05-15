@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="mrp_production_product_line_adjustment_form_view">
+            <field name="name">mrp.production.product.line.adjustment.form</field>
+            <field name="model">mrp.production.product.line.adjustment</field>
+            <field name="arch" type="xml">
+                <form string="Product quantity adjustment">
+                    <group>
+                        <field name="qty" />
+                    </group>
+                    <footer>
+                        <button name="change_qty" type="object"
+                            string="Confirm" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link"
+                            special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Adjust product quantities" target="new"
+                    res_model="mrp.production.product.line.adjustment"
+                    src_model="mrp.production.product.line" view_mode="form"
+                    id="action_mrp_production_product_line_adjustment" />
+
+    </data>
+</openerp>

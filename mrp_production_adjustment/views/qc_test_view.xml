@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="qc_test_category_tree_view" model="ir.ui.view">
+            <field name="name">qc.test.category.tree</field>
+            <field name="model">qc.test.category</field>
+            <field name="inherit_id"
+                   ref="quality_control.qc_test_category_tree_view" />
+            <field name="arch" type="xml">
+                <field name="active" position="before">
+                    <field name="adjustment_test" />
+                </field>
+            </field>
+        </record>
+
+        <record id="qc_test_tree_view" model="ir.ui.view">
+            <field name="name">qc.test.tree</field>
+            <field name="model">qc.test</field>
+            <field name="inherit_id" ref="quality_control.qc_test_tree_view" />
+            <field name="arch" type="xml">
+                <field name="company_id" position="before">
+                    <field name="adjustment_test" />
+                </field>
+            </field>
+        </record>
+
+        <record id="qc_test_form_view" model="ir.ui.view">
+            <field name="name">qc.test.form</field>
+            <field name="model">qc.test</field>
+            <field name="inherit_id" ref="quality_control.qc_test_form_view" />
+            <field name="arch" type="xml">
+                <field name="category" position="after">
+                    <field name="adjustment_test" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

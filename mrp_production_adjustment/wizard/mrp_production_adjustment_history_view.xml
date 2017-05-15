@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="mrp_production_adjustment_history_form_view">
+            <field name="name">mrp.production.adjustment.history.form</field>
+            <field name="model">mrp.production.adjustment.history</field>
+            <field name="arch" type="xml">
+                <form string="Adjustment History">
+                    <group>
+                        <!--<div class="oe_highlight_viscosity">-->
+                            <!--<span class="oe_form_field oe_inline">VISCOSITY MIN. </span>-->
+                            <!--<field name="production_min_visco" readonly="1"-->
+                                   <!--class="oe_inline" />-->
+                            <!--<span class="oe_form_field oe_inline"> - MAX. </span>-->
+                            <!--<field name="production_max_visco" readonly="1"-->
+                                   <!--class="oe_inline" />-->
+                        <!--</div>-->
+                        <field name="historicized_moves" nolabel="1" readonly="1" colspan="4">
+                            <tree colors="blue:state == 'draft';gray:state in ('cancel','done');red:scrapped == True"
+                                  fonts="bold:state == 'done'">
+                                <field name="product_id" />
+                                <field name="product_qty" />
+                                <field name="product_uom"
+                                       groups="product.group_uom" />
+                                <field name="selected_lots" />
+                                <field name="state" invisible="1" />
+                                <field name="scrapped" invisible="1"/>
+                            </tree>
+                        </field>
+                        <field name="line_ids" nolabel="1" readonly="1" colspan="4">
+                            <tree class="oe_highlight_field_alm"
+                                  colors="red:adj_addition_order == 'FINAL';blue:same_lot == True">
+                                <field name="production_id" />
+                                <field name="production_date_planned"
+                                       widget="date" />
+                                <field name="production_product_id" />
+                                <field name="production_product_qty" />
+                                <field name="move_product_qty" />
+                                <field name="move_product_id" />
+                                <field name="move_restrict_lot_id" />
+                                <field name="same_lot" />
+                                <field name="adj_addition_order" />
+                                <!--<field name="adj_temperature" />-->
+                                <!--<field name="adj_ph" />-->
+                                <!--<field name="adj_watts" />-->
+                                <field name="adj_product_id" />
+                                <field name="adj_product_qty" />
+                                <field name="adj_product_uom_id"
+                                       groups="product.group_uom" />
+                                <!--<field name="adj_product_qty2" />-->
+                                <!--<field name="adj_viscosity" />-->
+                                <!--<field name="adj_tixotrophy" />-->
+                                <!--<field name="adj_ph_lab" />-->
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+         <record id="action_adjustment_history" model="ir.actions.act_window">
+            <field name="name">Addition View</field>
+            <field name="res_model">mrp.production.adjustment.history</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="mrp_production_adjustment_history_form_view" />
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.ui.view" id="mrp_production_history_button">
+            <field name="name">mrp.production.history_button</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_buttons" />
+            <field name="arch" type="xml">
+                <div name="buttons" position="inside">
+                    <button class="oe_stat_button" name="%(action_adjustment_history)d"
+                            icon="fa-history" type="action" string="Historic moves">
+                    </button>
+                </div>
+            </field>
+        </record>
+    </data>
+</openerp>
