@@ -41,6 +41,11 @@ class TestStockPickingPackageLabel(
         })
         self.stock_picking.action_confirm()
         self.stock_picking.force_assign()
+        res = self.stock_picking.do_enter_transfer_details()
+        wizard = self.env['stock.transfer_details'].browse(res.get('res_id'))
+        for line in wizard.item_ids:
+            line.put_in_pack()
+        wizard.do_save_for_later()
 
     def test_stock_picking_package_label(self):
         self.assertFalse(self.stock_picking.report_print)
@@ -61,11 +66,23 @@ class TestStockPickingPackageLabel(
             'copy_num': 1,
             'label_model': 'cube',
         })
+        self.report_copy_model.create({
+            'partner_id': self.partner.id,
+            'report_id': self.report.id,
+            'copy_num': 1,
+            'label_model': 'palet',
+        })
+        self.report_copy_model.create({
+            'partner_id': self.partner.id,
+            'report_id': self.report.id,
+            'copy_num': 1,
+            'label_model': 'num_palet',
+        })
         self.stock_picking.button_load_printing_info()
         self.assertTrue(self.stock_picking.report_print)
         self.assertTrue(self.stock_picking.cube_label_prints)
-        # self.assertTrue(self.stock_picking.number_pallet_label_prints)
-        # self.assertTrue(self.stock_picking.nonumber_pallet_label_prints)
+        self.assertTrue(self.stock_picking.number_pallet_label_prints)
+        self.assertTrue(self.stock_picking.nonumber_pallet_label_prints)
         self.stock_picking.button_print_all()
 
     def test_childs_report(self):
