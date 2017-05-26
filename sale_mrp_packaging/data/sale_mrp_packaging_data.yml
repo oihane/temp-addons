@@ -1,0 +1,5 @@
+-
+  !python {model: stock.warehouse}: |
+    warehouse_with_package_ids = self.search(cr, uid, [('package_to_resupply', '=', True)], context=context)
+    self.write(cr, uid, warehouse_with_package_ids, {'package_to_resupply': True}, context=context)
+

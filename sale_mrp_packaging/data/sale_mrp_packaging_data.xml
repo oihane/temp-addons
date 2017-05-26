@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="route_warehouse0_packaging" model="stock.location.route"
+                forcecreate="1">
+            <field name="name">Packaging</field>
+            <field name="sequence">15</field>
+        </record>
+    </data>
+</openerp>
