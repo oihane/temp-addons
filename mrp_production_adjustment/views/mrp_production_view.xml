@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="mrp_production_adjustment_form_view" model="ir.ui.view">
+            <field name="name">mrp.production.adjustment.form</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp_production_add_middle_stuff.mrp_production_addition_form_view" />
+            <field name="arch" type="xml">
+                <button name="%(mrp_production_add_middle_stuff.action_addition)d"
+                        position="after">
+                    <button name="%(mrp_production_adjustment.make_adjustment_action)d"
+                            string="Make adjustment"
+                            type="action" states="confirmed,ready,in_production,done"
+                            class="oe_read_only oe_inline" />
+                </button>
+                <page string="Consumed Products" position="inside">
+                    <field name="adjustment_ids" create="0"
+                           context="{'default_production_id': active_id}" />
+                </page>
+            </field>
+        </record>
+
+        <record id="mrp_production_adjustment_line_tree_view"
+                model="ir.ui.view">
+            <field name="name">mrp.production.adjustment.line.tree</field>
+            <field name="model">mrp.production.adjustment.line</field>
+            <field name="arch" type="xml">
+                <tree create="0" fonts="bold:move_state == 'assigned'"
+                      colors="grey:move_state in ('done', 'cancel')">
+                      <!--colors="grey:move_state in ('done', 'cancel');red:inspection_state in ('draft','ready')">-->
+                    <field name="production_id"
+                           invisible="'default_production_id' in context" />
+                    <field name="addition_order" />
+                    <field name="ph_before" />
+                    <field name="visco_before" />
+                    <field name="thixo_before" />
+                    <field name="product_id" />
+                    <field name="product_qty" />
+                    <field name="product_uom_id" groups="product.group_uom" />
+                    <!--<field name="create_date" widget="date" readonly="1" />-->
+                    <field name="ph_after" />
+                    <field name="visco_after" />
+                    <field name="thixo_after" />
+                    <field name="move_state" invisible="1" />
+                    <field name="inspection_id" readonly="1" />
+                    <button name="%(mrp_production_adjustment.set_adjustment_test_action)d"
+                            string="Sent to lab" type="action"
+                            class="oe_read_only" icon="gtk-color-picker"
+                            attrs="{'invisible': [('inspection_id', '!=', False)]}" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="mrp_production_adjustment_line_form_view"
+                model="ir.ui.view">
+            <field name="name">mrp.production.adjustment.line.form</field>
+            <field name="model">mrp.production.adjustment.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="production_id"
+                                   invisible="'default_production_id' in context" />
+                            <field name="addition_order" />
+                            <group string="Previous Measure">
+                                <field name="ph_before" />
+                                <field name="visco_before" />
+                                <field name="thixo_before" />
+                            </group>
+                            <group>
+                                <field name="product_id"
+                                       attrs="{'readonly': [('move_state', 'in', ('assigned', 'done', 'cancel'))]}"/>
+                                <label for="product_qty"/>
+                                <div>
+                                    <field name="product_qty" class="oe_inline"
+                                           attrs="{'readonly': [('move_state', 'in', ('assigned', 'done', 'cancel'))]}" />
+                                    <field name="product_uom_id" class="oe_inline"
+                                           groups="product.group_uom"
+                                           attrs="{'readonly': [('move_state', 'in', ('assigned', 'done', 'cancel'))]}" />
+                                </div>
+                                <field name="move_id" invisible="1" />
+                                <field name="move_state" invisible="1" />
+                                <field name="inspection_id" readonly="1" />
+                            </group>
+                            <group string="After Addition Measure">
+                                <field name="ph_after" />
+                                <field name="visco_after" />
+                                <field name="thixo_after" />
+                            </group>
+                            <button name="%(mrp_production_adjustment.set_adjustment_test_action)d"
+                                    string="Sent to lab" type="action"
+                                    class="oe_read_only" icon="gtk-color-picker"
+                                    attrs="{'invisible': [('inspection_id', '!=', False)]}" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
