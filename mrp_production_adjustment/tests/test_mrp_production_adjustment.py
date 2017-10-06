@@ -52,17 +52,31 @@ class TestMrpProductionAddMiddleStuff(common.TransactionCase):
         with self.assertRaises(exceptions.ValidationError):
             self.adj_model.with_context(
                 active_id=self.production.id).create(wiz_values)
-        wiz_values.update({'product_uom_id': self.product1.uom_id.id})
+        wiz_values.update({
+            'product_uom_id': self.product1.uom_id.id,
+        })
         with self.assertRaises(exceptions.ValidationError):
             self.adj_model.with_context(
                 active_id=self.production.id).create(wiz_values)
-        wiz_values.update({'product_qty': 1.0})
+        wiz_values.update({
+            'product_qty': 1.0,
+        })
         add_wiz = self.adj_model.with_context(
             active_id=self.production.id).create(wiz_values)
         add_wiz.make_adjustment()
         self.assertTrue(self.production.adjustment_ids)
         self.assertTrue(self.production.product_lines.filtered('addition'))
         self.assertEquals(len(self.production.move_lines), 2)
+        wiz_values.update({
+            'final_addition': True,
+        })
+        add_wiz = self.adj_model.with_context(
+            active_id=self.production.id).create(wiz_values)
+        add_wiz.make_adjustment()
+        self.assertTrue(self.production.adjustment_ids.filtered(
+            lambda a: a.addition_order == 'FINAL'))
+        # with self.assertRaises(exceptions.ValidationError):
+        #     add_wiz.make_adjustment()
 
     def test_adjustment_onchange(self):
         wiz_values = {
